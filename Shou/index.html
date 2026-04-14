@@ -1764,6 +1764,80 @@
     .countdown-num { font-size: 1.7rem; }
   }
 
+  /* Feedback Modal */
+  .feedback-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(10,26,15,0.85);
+    backdrop-filter: blur(6px);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+  }
+  .feedback-modal-overlay.open { display: flex; }
+  .feedback-modal {
+    background: #0f2218;
+    border: 1px solid rgba(45,122,79,0.25);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    width: 100%;
+    max-width: 520px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modalIn 0.35s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  @keyframes modalIn {
+    from { opacity: 0; transform: translateY(30px) scale(0.96); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .feedback-modal-close {
+    position: absolute;
+    top: 1rem; right: 1rem;
+    background: rgba(255,255,255,0.06);
+    border: none;
+    color: var(--cream);
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s;
+  }
+  .feedback-modal-close:hover { background: rgba(255,255,255,0.12); }
+  .modal-live-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.35rem 1rem;
+    background: rgba(45,122,79,0.12);
+    border-radius: 100px;
+    font-size: 0.7rem;
+    color: var(--green-mid);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .modal-live-badge span {
+    width: 6px; height: 6px;
+    background: var(--green-mid);
+    border-radius: 50%;
+    animation: blink 1.2s ease-in-out infinite;
+  }
+  .modal-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    color: var(--cream);
+    line-height: 1.15;
+    margin-bottom: 0.4rem;
+  }
+  .modal-title em { color: var(--gold); font-style: italic; }
+  .modal-sub {
+    font-size: 0.88rem;
+    color: rgba(250,246,237,0.5);
+    margin-bottom: 2rem;
+  }
+
 </style>
 </head>
 <body>
@@ -2275,10 +2349,72 @@ function handleWaitlist(e) {
         <div class="d-val">Free — all welcome</div>
       </div>
     </div>
-    <a href="https://formspree.io/f/mgopqkqj" target="_blank" rel="noopener" class="event-cta reveal">Try it & leave feedback →</a>
+    <button class="event-cta reveal" id="openFeedbackBtn">Try it & leave feedback →</button>
     <div class="event-free reveal">Completely free · No signup required · Just show up</div>
   </div>
 </section>
+
+<!-- FEEDBACK MODAL -->
+<div class="feedback-modal-overlay" id="feedbackModal">
+  <div class="feedback-modal">
+    <button class="feedback-modal-close" id="modalClose">✕</button>
+    <div style="text-align:center;margin-bottom:1.5rem;">
+      <div class="modal-live-badge"><span></span>Live tasting — April 29</div>
+      <h2 class="modal-title">Tell us what<br><em>you think.</em></h2>
+      <p class="modal-sub">Honest feedback only. It helps us make Verde Vivo better.</p>
+    </div>
+
+    <form class="feedback-form" id="feedbackForm" action="https://formspree.io/f/mgopqkqj" method="POST">
+
+      <div class="form-group">
+        <div class="form-label">Heat level <span>How spicy was it?</span></div>
+        <div class="rating-track" id="heatRating">
+          <button type="button" class="rating-btn" data-val="1" data-name="heat"><span class="rnum">1</span><span class="rlabel">Mild</span></button>
+          <button type="button" class="rating-btn" data-val="2" data-name="heat"><span class="rnum">2</span><span class="rlabel"></span></button>
+          <button type="button" class="rating-btn" data-val="3" data-name="heat"><span class="rnum">3</span><span class="rlabel">Medium</span></button>
+          <button type="button" class="rating-btn" data-val="4" data-name="heat"><span class="rnum">4</span><span class="rlabel"></span></button>
+          <button type="button" class="rating-btn" data-val="5" data-name="heat"><span class="rnum">5</span><span class="rlabel">Hot 🔥</span></button>
+        </div>
+        <input type="hidden" name="heat_level" id="heatVal">
+      </div>
+
+      <div class="form-group">
+        <div class="form-label">Overall taste <span>How much did you enjoy it?</span></div>
+        <div class="rating-track" id="tasteRating">
+          <button type="button" class="rating-btn" data-val="1" data-name="taste"><span class="rnum">1</span><span class="rlabel">Disliked</span></button>
+          <button type="button" class="rating-btn" data-val="2" data-name="taste"><span class="rnum">2</span><span class="rlabel"></span></button>
+          <button type="button" class="rating-btn" data-val="3" data-name="taste"><span class="rnum">3</span><span class="rlabel">Liked it</span></button>
+          <button type="button" class="rating-btn" data-val="4" data-name="taste"><span class="rnum">4</span><span class="rlabel"></span></button>
+          <button type="button" class="rating-btn" data-val="5" data-name="taste"><span class="rnum">5</span><span class="rlabel">Loved it ❤️</span></button>
+        </div>
+        <input type="hidden" name="taste_rating" id="tasteVal">
+      </div>
+
+      <div class="form-group">
+        <div class="form-label">Would you buy it?</div>
+        <div class="would-buy" id="buyRating">
+          <button type="button" class="buy-btn" data-val="Definitely yes"><span class="b-emoji">🛒</span>Definitely yes</button>
+          <button type="button" class="buy-btn" data-val="Maybe"><span class="b-emoji">🤔</span>Maybe</button>
+          <button type="button" class="buy-btn" data-val="Probably not"><span class="b-emoji">👋</span>Probably not</button>
+        </div>
+        <input type="hidden" name="would_buy" id="buyVal">
+      </div>
+
+      <div class="form-group">
+        <div class="form-label">Any other thoughts? <span>Optional</span></div>
+        <textarea class="form-input" name="comments" rows="3" placeholder="What did it remind you of? What would you put it on?"></textarea>
+      </div>
+
+      <button type="submit" class="form-submit" id="submitBtn">Submit Feedback</button>
+    </form>
+
+    <div class="submit-success" id="successMsg" style="display:none;text-align:center;padding:2rem 0;">
+      <div style="font-size:2.5rem;margin-bottom:0.75rem;">🌿</div>
+      <h3 style="font-family:'Playfair Display',serif;color:var(--cream);margin-bottom:0.5rem;">Grazie mille!</h3>
+      <p style="color:rgba(250,246,237,0.55);font-size:0.9rem;">Your feedback means everything to us. Glad you came out today.</p>
+    </div>
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer>
@@ -2391,6 +2527,79 @@ function handleWaitlist(e) {
 
     tick();
   })();
+
+  // Feedback modal
+  const feedbackModal   = document.getElementById('feedbackModal');
+  const openFeedbackBtn = document.getElementById('openFeedbackBtn');
+  const modalClose      = document.getElementById('modalClose');
+
+  openFeedbackBtn.addEventListener('click', () => {
+    feedbackModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+
+  function closeModal() {
+    feedbackModal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  modalClose.addEventListener('click', closeModal);
+  feedbackModal.addEventListener('click', (e) => {
+    if (e.target === feedbackModal) closeModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  // Rating buttons
+  document.querySelectorAll('.rating-track').forEach(track => {
+    track.querySelectorAll('.rating-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        track.querySelectorAll('.rating-btn').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        const name = btn.dataset.name;
+        const val  = btn.dataset.val;
+        if (name === 'heat')  document.getElementById('heatVal').value  = val;
+        if (name === 'taste') document.getElementById('tasteVal').value = val;
+      });
+    });
+  });
+
+  document.querySelectorAll('.buy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.buy-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      document.getElementById('buyVal').value = btn.dataset.val;
+    });
+  });
+
+  // Formspree AJAX submit
+  const feedbackForm = document.getElementById('feedbackForm');
+  if (feedbackForm) {
+    feedbackForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = document.getElementById('submitBtn');
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+      try {
+        const res = await fetch('https://formspree.io/f/mgopqkqj', {
+          method: 'POST',
+          body: new FormData(feedbackForm),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          feedbackForm.style.display = 'none';
+          document.getElementById('successMsg').style.display = 'block';
+        } else {
+          submitBtn.textContent = 'Try again';
+          submitBtn.disabled = false;
+        }
+      } catch(err) {
+        submitBtn.textContent = 'Try again';
+        submitBtn.disabled = false;
+      }
+    });
+  }
 
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
