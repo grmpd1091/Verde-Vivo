@@ -2286,25 +2286,7 @@ function handleWaitlist(e) {
 <section id="feedback">
   <div class="feedback-inner">
 
-    <!-- GATE: shown first -->
-    <div id="feedbackGate" style="text-align:center;">
-      <div class="section-label" style="justify-content:center;">
-        <span style="display:inline-block;width:24px;height:1px;background:var(--green-mid);margin-right:1rem;"></span>
-        Tasting Feedback
-        <span style="display:inline-block;width:24px;height:1px;background:var(--green-mid);margin-left:1rem;"></span>
-      </div>
-      <h2 class="feedback-title" style="margin-bottom:1rem;">Did you try<br><em>Verde Vivo?</em></h2>
-      <p class="feedback-sub" style="margin-bottom:2.5rem;">This feedback form is for tasters at our April 29th event. If you're there right now, tap below.</p>
-      <button class="tasting-gate-btn" id="imHereBtn">
-        <span style="font-size:1.3rem;">🌶️</span>
-        I'm here tasting it right now
-        <span style="font-size:0.8rem;opacity:0.7;">→</span>
-      </button>
-      <p style="margin-top:1rem;font-size:0.75rem;color:var(--text-mid);opacity:0.6;letter-spacing:0.05em;">April 29 · ASIJ courtyard · 11:00–11:40am</p>
-    </div>
-
-    <!-- FORM: hidden until gate clicked -->
-    <div id="feedbackFormWrap" style="display:none;">
+    <div id="feedbackFormWrap">
       <div style="text-align:center;margin-bottom:2.5rem;">
         <div style="display:inline-flex;align-items:center;gap:0.6rem;padding:0.4rem 1.2rem;background:rgba(45,122,79,0.1);border-radius:100px;font-size:0.75rem;color:var(--green-mid);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.2rem;">
           <span style="width:6px;height:6px;background:var(--green-mid);border-radius:50%;display:inline-block;animation:blink 1.2s ease-in-out infinite;"></span>
@@ -2553,21 +2535,6 @@ function handleWaitlist(e) {
       document.querySelectorAll('.buy-btn').forEach(b => b.classList.remove('selected'));
       btn.classList.add('selected');
     });
-  });
-
-  // Gate button
-  document.getElementById('imHereBtn').addEventListener('click', () => {
-    document.getElementById('feedbackGate').style.display = 'none';
-    const wrap = document.getElementById('feedbackFormWrap');
-    wrap.style.display = 'block';
-    wrap.style.opacity = '0';
-    wrap.style.transform = 'translateY(20px)';
-    wrap.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    setTimeout(() => {
-      wrap.style.opacity = '1';
-      wrap.style.transform = 'translateY(0)';
-    }, 30);
-    setTimeout(() => { wrap.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 100);
   });
 
   // Rating buttons — update hidden inputs for Formspree
