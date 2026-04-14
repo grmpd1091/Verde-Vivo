@@ -1701,6 +1701,69 @@
     #bottle > div > div img { height: 260px !important; }
   }
 
+  /* Countdown Timer */
+  .event-countdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 2rem 0 2.5rem;
+  }
+  .countdown-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--green-mid);
+    opacity: 0.8;
+  }
+  .countdown-units {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .countdown-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    background: rgba(45,122,79,0.1);
+    border: 1px solid rgba(45,122,79,0.2);
+    border-radius: 10px;
+    padding: 0.7rem 1.1rem;
+    min-width: 64px;
+  }
+  .countdown-num {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--cream);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .countdown-unit-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--green-mid);
+    opacity: 0.7;
+  }
+  .countdown-sep {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--green-mid);
+    opacity: 0.5;
+    margin-bottom: 1rem;
+  }
+  .countdown-ended {
+    font-size: 1rem;
+    color: var(--green-mid);
+    letter-spacing: 0.05em;
+  }
+  @media (max-width: 480px) {
+    .countdown-unit { min-width: 50px; padding: 0.5rem 0.7rem; }
+    .countdown-num { font-size: 1.7rem; }
+  }
+
 </style>
 </head>
 <body>
@@ -2176,7 +2239,22 @@ function handleWaitlist(e) {
       Taste it<br>
       <em>yourself.</em>
     </h2>
-    <p class="event-desc reveal">We're bringing Verde Vivo to the ASIJ bus turnaround. Come try the sauce that started with a question and ended with something genuinely new.</p>
+    <p class="event-desc reveal">We're bringing Verde Vivo to the ASIJ courtyard. Come try the sauce that started with a question and ended with something genuinely new.</p>
+
+    <!-- Countdown Timer -->
+    <div class="event-countdown reveal" id="eventCountdown">
+      <div class="countdown-label">Event starts in</div>
+      <div class="countdown-units" id="countdownUnits">
+        <div class="countdown-unit"><span class="countdown-num" id="cd-days">--</span><span class="countdown-unit-label">days</span></div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-unit"><span class="countdown-num" id="cd-hours">--</span><span class="countdown-unit-label">hours</span></div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-unit"><span class="countdown-num" id="cd-minutes">--</span><span class="countdown-unit-label">min</span></div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-unit"><span class="countdown-num" id="cd-seconds">--</span><span class="countdown-unit-label">sec</span></div>
+      </div>
+    </div>
+
     <div class="event-details reveal">
       <div class="event-detail">
         <div class="d-icon">📅</div>
@@ -2191,7 +2269,7 @@ function handleWaitlist(e) {
       <div class="event-detail">
         <div class="d-icon">📍</div>
         <div class="d-label">Location</div>
-        <div class="d-val">ASIJ bus turnaround</div>
+        <div class="d-val">ASIJ courtyard</div>
       </div>
       <div class="event-detail">
         <div class="d-icon">🎟️</div>
@@ -2222,7 +2300,7 @@ function handleWaitlist(e) {
         I'm here tasting it right now
         <span style="font-size:0.8rem;opacity:0.7;">→</span>
       </button>
-      <p style="margin-top:1rem;font-size:0.75rem;color:var(--text-mid);opacity:0.6;letter-spacing:0.05em;">April 29 · ASIJ bus turnaround · 11:00–11:40am</p>
+      <p style="margin-top:1rem;font-size:0.75rem;color:var(--text-mid);opacity:0.6;letter-spacing:0.05em;">April 29 · ASIJ courtyard · 11:00–11:40am</p>
     </div>
 
     <!-- FORM: hidden until gate clicked -->
@@ -2356,6 +2434,45 @@ function handleWaitlist(e) {
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 50);
   });
+
+  // Countdown timer — April 29, 2026 at 11:00 AM JST (UTC+9)
+  (function() {
+    const eventTime = new Date('2026-04-29T11:00:00+09:00').getTime();
+    const cdDays    = document.getElementById('cd-days');
+    const cdHours   = document.getElementById('cd-hours');
+    const cdMins    = document.getElementById('cd-minutes');
+    const cdSecs    = document.getElementById('cd-seconds');
+    const cdUnits   = document.getElementById('countdownUnits');
+    const cdLabel   = document.querySelector('.countdown-label');
+
+    function pad(n) { return String(n).padStart(2, '0'); }
+
+    function tick() {
+      const now  = Date.now();
+      const diff = eventTime - now;
+
+      if (diff <= 0) {
+        cdUnits.innerHTML = '<span class="countdown-ended">The tasting is happening now!</span>';
+        if (cdLabel) cdLabel.style.display = 'none';
+        return;
+      }
+
+      const totalSecs = Math.floor(diff / 1000);
+      const days  = Math.floor(totalSecs / 86400);
+      const hours = Math.floor((totalSecs % 86400) / 3600);
+      const mins  = Math.floor((totalSecs % 3600) / 60);
+      const secs  = totalSecs % 60;
+
+      cdDays.textContent  = pad(days);
+      cdHours.textContent = pad(hours);
+      cdMins.textContent  = pad(mins);
+      cdSecs.textContent  = pad(secs);
+
+      setTimeout(tick, 1000);
+    }
+
+    tick();
+  })();
 
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
