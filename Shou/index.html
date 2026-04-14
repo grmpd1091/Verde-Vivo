@@ -2275,7 +2275,7 @@ function handleWaitlist(e) {
         <div class="d-val">Free — all welcome</div>
       </div>
     </div>
-    <span class="event-cta reveal">Try it & leave feedback →</span>
+    <a href="https://formspree.io/f/mgopqkqj" target="_blank" rel="noopener" class="event-cta reveal">Try it & leave feedback →</a>
     <div class="event-free reveal">Completely free · No signup required · Just show up</div>
   </div>
 </section>
@@ -2346,9 +2346,10 @@ function handleWaitlist(e) {
     nav.classList.toggle('scrolled', window.scrollY > 50);
   });
 
-  // Countdown timer — April 29, 2026 at 11:00 AM JST (UTC+9)
+  // Countdown timer — April 29, 2026 11:00–11:40 AM JST (UTC+9)
   (function() {
-    const eventTime = new Date('2026-04-29T11:00:00+09:00').getTime();
+    const startTime = new Date('2026-04-29T11:00:00+09:00').getTime();
+    const endTime   = new Date('2026-04-29T11:40:00+09:00').getTime();
     const cdDays    = document.getElementById('cd-days');
     const cdHours   = document.getElementById('cd-hours');
     const cdMins    = document.getElementById('cd-minutes');
@@ -2360,14 +2361,20 @@ function handleWaitlist(e) {
 
     function tick() {
       const now  = Date.now();
-      const diff = eventTime - now;
 
-      if (diff <= 0) {
+      if (now >= endTime) {
+        cdUnits.innerHTML = '<span class="countdown-ended">Thanks for coming out!</span>';
+        if (cdLabel) cdLabel.style.display = 'none';
+        return;
+      }
+
+      if (now >= startTime) {
         cdUnits.innerHTML = '<span class="countdown-ended">The tasting is happening now!</span>';
         if (cdLabel) cdLabel.style.display = 'none';
         return;
       }
 
+      const diff = startTime - now;
       const totalSecs = Math.floor(diff / 1000);
       const days  = Math.floor(totalSecs / 86400);
       const hours = Math.floor((totalSecs % 86400) / 3600);
