@@ -1800,7 +1800,6 @@
     <li><a href="#science">The Science</a></li>
     <li><a href="#story">Our Story</a></li>
     <li><a href="#event">Tasting</a></li>
-    <li><a href="#feedback">Feedback</a></li>
   </ul>
   <a href="#preorder" style="padding:0.55rem 1.3rem;background:var(--gold);color:var(--green-deep);border-radius:100px;font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:background 0.2s,transform 0.15s;white-space:nowrap;" onmouseover="this.style.background='var(--gold-light)';this.style.transform='scale(1.04)'" onmouseout="this.style.background='var(--gold)';this.style.transform='scale(1)'">Pre-Order</a>
   <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
@@ -1813,7 +1812,6 @@
   <a href="#science" class="drawer-link">The Science</a>
   <a href="#story" class="drawer-link">Our Story</a>
   <a href="#event" class="drawer-link">Tasting</a>
-  <a href="#feedback" class="drawer-link">Feedback</a>
 </div>
 
 <!-- HERO -->
@@ -2277,77 +2275,8 @@ function handleWaitlist(e) {
         <div class="d-val">Free — all welcome</div>
       </div>
     </div>
-    <a href="#feedback" class="event-cta reveal">Try it & leave feedback →</a>
+    <span class="event-cta reveal">Try it & leave feedback →</span>
     <div class="event-free reveal">Completely free · No signup required · Just show up</div>
-  </div>
-</section>
-
-<!-- FEEDBACK -->
-<section id="feedback">
-  <div class="feedback-inner">
-
-    <div id="feedbackFormWrap">
-      <div style="text-align:center;margin-bottom:2.5rem;">
-        <div style="display:inline-flex;align-items:center;gap:0.6rem;padding:0.4rem 1.2rem;background:rgba(45,122,79,0.1);border-radius:100px;font-size:0.75rem;color:var(--green-mid);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.2rem;">
-          <span style="width:6px;height:6px;background:var(--green-mid);border-radius:50%;display:inline-block;animation:blink 1.2s ease-in-out infinite;"></span>
-          Live tasting — April 29
-        </div>
-        <h2 class="feedback-title">Tell us what<br><em>you think.</em></h2>
-        <p class="feedback-sub">Honest feedback only. It helps us make Verde Vivo better.</p>
-      </div>
-
-      <form class="feedback-form" id="feedbackForm"
-            action="https://formspree.io/f/mgopqkqj"
-            method="POST">
-
-        <div class="form-group">
-          <div class="form-label">Heat level <span>How spicy was it?</span></div>
-          <div class="rating-track" id="heatRating">
-            <button type="button" class="rating-btn" data-val="1" data-name="heat"><span class="rnum">1</span><span class="rlabel">Mild</span></button>
-            <button type="button" class="rating-btn" data-val="2" data-name="heat"><span class="rnum">2</span><span class="rlabel"></span></button>
-            <button type="button" class="rating-btn" data-val="3" data-name="heat"><span class="rnum">3</span><span class="rlabel">Medium</span></button>
-            <button type="button" class="rating-btn" data-val="4" data-name="heat"><span class="rnum">4</span><span class="rlabel"></span></button>
-            <button type="button" class="rating-btn" data-val="5" data-name="heat"><span class="rnum">5</span><span class="rlabel">Hot 🔥</span></button>
-          </div>
-          <input type="hidden" name="heat_level" id="heatVal">
-        </div>
-
-        <div class="form-group">
-          <div class="form-label">Overall taste <span>How much did you enjoy it?</span></div>
-          <div class="rating-track" id="tasteRating">
-            <button type="button" class="rating-btn" data-val="1" data-name="taste"><span class="rnum">1</span><span class="rlabel">Disliked</span></button>
-            <button type="button" class="rating-btn" data-val="2" data-name="taste"><span class="rnum">2</span><span class="rlabel"></span></button>
-            <button type="button" class="rating-btn" data-val="3" data-name="taste"><span class="rnum">3</span><span class="rlabel">Liked it</span></button>
-            <button type="button" class="rating-btn" data-val="4" data-name="taste"><span class="rnum">4</span><span class="rlabel"></span></button>
-            <button type="button" class="rating-btn" data-val="5" data-name="taste"><span class="rnum">5</span><span class="rlabel">Loved it ❤️</span></button>
-          </div>
-          <input type="hidden" name="taste_rating" id="tasteVal">
-        </div>
-
-        <div class="form-group">
-          <div class="form-label">Would you buy it?</div>
-          <div class="would-buy" id="buyRating">
-            <button type="button" class="buy-btn" data-val="Definitely yes"><span class="b-emoji">🛒</span>Definitely yes</button>
-            <button type="button" class="buy-btn" data-val="Maybe"><span class="b-emoji">🤔</span>Maybe</button>
-            <button type="button" class="buy-btn" data-val="Probably not"><span class="b-emoji">👋</span>Probably not</button>
-          </div>
-          <input type="hidden" name="would_buy" id="buyVal">
-        </div>
-
-        <div class="form-group">
-          <div class="form-label">Any other thoughts? <span>Optional</span></div>
-          <textarea class="form-input" name="comments" rows="3" placeholder="What did it remind you of? What would you put it on?"></textarea>
-        </div>
-
-        <button type="submit" class="form-submit" id="submitBtn">Submit Feedback</button>
-      </form>
-    </div>
-
-    <div class="submit-success" id="successMsg">
-      <div class="s-emoji">🌿</div>
-      <h3>Grazie mille!</h3>
-      <p>Your feedback means everything to us. Glad you came out today.</p>
-    </div>
   </div>
 </section>
 
@@ -2537,60 +2466,6 @@ function handleWaitlist(e) {
     });
   });
 
-  // Rating buttons — update hidden inputs for Formspree
-  document.querySelectorAll('.rating-track').forEach(track => {
-    track.querySelectorAll('.rating-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        track.querySelectorAll('.rating-btn').forEach(b => b.classList.remove('selected'));
-        btn.classList.add('selected');
-        const name = btn.dataset.name;
-        const val = btn.dataset.val;
-        if (name === 'heat') document.getElementById('heatVal').value = val;
-        if (name === 'taste') document.getElementById('tasteVal').value = val;
-      });
-    });
-  });
-
-  document.querySelectorAll('.buy-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.buy-btn').forEach(b => b.classList.remove('selected'));
-      btn.classList.add('selected');
-      document.getElementById('buyVal').value = btn.dataset.val;
-    });
-  });
-
-  // Formspree AJAX submit
-  const feedbackForm = document.getElementById('feedbackForm');
-  if (feedbackForm) {
-    feedbackForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const submitBtn = document.getElementById('submitBtn');
-      submitBtn.textContent = 'Sending...';
-      submitBtn.disabled = true;
-      try {
-        const res = await fetch('https://formspree.io/f/mgopqkqj', {
-          method: 'POST',
-          body: new FormData(feedbackForm),
-          headers: { 'Accept': 'application/json' }
-        });
-        if (res.ok) {
-          document.getElementById('feedbackFormWrap').style.display = 'none';
-          const s = document.getElementById('successMsg');
-          s.style.display = 'block';
-          s.style.opacity = '0';
-          s.style.transform = 'translateY(20px)';
-          s.style.transition = 'opacity 0.5s, transform 0.5s';
-          setTimeout(() => { s.style.opacity = '1'; s.style.transform = 'translateY(0)'; }, 30);
-        } else {
-          submitBtn.textContent = 'Try again';
-          submitBtn.disabled = false;
-        }
-      } catch(err) {
-        submitBtn.textContent = 'Try again';
-        submitBtn.disabled = false;
-      }
-    });
-  }
 
 
   // ── INTRO SEQUENCE ──
