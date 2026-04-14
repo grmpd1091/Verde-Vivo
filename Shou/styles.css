@@ -1,0 +1,237 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: center;
+}
+
+#resetButton {
+    margin-top: 20px;
+}
+
+#playerInput {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    width: 200px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #007acc;
+}
+
+input[type="color"] {
+    border: none;
+    cursor: pointer;
+}
+
+button {
+    background-color: #007acc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #005f99;
+    transform: scale(1.05);
+}
+
+#playerDisplay {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(4, 100px);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.square {
+    position: relative;
+    background-color: #e8f0fe;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #333;
+    transition: transform 0.2s;
+}
+
+.square:hover {
+    transform: scale(1.05);
+}
+
+.marker-container {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    display: flex;
+    gap: 5px;
+}
+
+.player-marker {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    animation: pop 0.3s ease-out;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#turnSection {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Space between the text and the button */
+    margin-bottom: 30px;
+}
+
+#currentTurn {
+    font-size: 28px;
+    color: #007acc;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#questionModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.answer-button {
+    background-color: #007acc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.answer-button:hover {
+    background-color: #005f99;
+    transform: scale(1.05);
+}
+
+.answer-button:active {
+    transform: scale(0.95);
+}
+
+#answerQuestionButton {
+    padding: 15px 35px;
+    font-size: 22px;
+    font-weight: bold;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+
+#answerQuestionButton:hover {
+    background-color: #218838;
+    transform: scale(0.95);
+}
+
+#answerQuestionButton:active {
+    transform: scale(1.0);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
