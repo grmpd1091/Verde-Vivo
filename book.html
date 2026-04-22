@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Session — Spencer Jennings | SpenJenn Grind</title>
+  <meta name="description" content="Book a private, group, or team training session with Spencer Jennings in Tokyo. View upcoming camps and clinics at Nishimachi International School and Tokyo American Club.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+
+<!-- ── PAGE INTRO ── -->
+<div class="page-intro" id="pageIntro">
+  <img src="logo+tagline.jpg" alt="SpenJenn Grind">
+</div>
+
+<!-- ── NAV ── -->
+<nav class="nav scrolled" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="logo+tagline.jpg" alt="SpenJenn Grind">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="story.html">Story</a></li>
+      <li><a href="training.html">Training</a></li>
+      <li><a href="clients.html">Clients</a></li>
+      <li><a href="book.html" class="nav-cta-link active">Book Now</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ── MOBILE NAV ── -->
+<div class="nav-mobile" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="story.html">Story</a>
+  <a href="training.html">Training</a>
+  <a href="clients.html">Clients</a>
+  <a href="book.html">Book Now</a>
+</div>
+
+<!-- ── PAGE HERO ── -->
+<header class="page-hero" style="padding-top: var(--nav-h);">
+  <div class="page-hero__bg" style="background-image: url('3x3action4.jpg'); background-position: center 30%;"></div>
+  <div class="page-hero__gradient"></div>
+  <div class="page-hero__content container">
+    <span class="page-hero__label">SpenJenn Grind</span>
+    <h1 class="page-hero__title">READY TO<br>ELEVATE<br>YOUR GAME?</h1>
+  </div>
+</header>
+
+<!-- ── CONTACT + FORM ── -->
+<section class="book-section section">
+  <div class="book-section__inner">
+
+    <!-- FORM -->
+    <div class="contact-form">
+      <div class="form-head fade-in">
+        <span class="section-label">Get in Touch</span>
+        <h2>Send a Message</h2>
+        <p>Tell Spencer what you're working on — he'll get back to you directly.</p>
+      </div>
+
+      <!-- Sign up free at formspree.io, create a form, then replace YOUR_FORM_ID below -->
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="fade-in d1">
+        <input type="hidden" name="_subject" value="New training inquiry — SpenJenn Grind">
+
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="Name" placeholder="First &amp; Last Name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="Email" placeholder="your@email.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="interest">I'm Interested In</label>
+          <select id="interest" name="Interest" style="background: var(--charcoal); border: 1px solid var(--border); color: var(--white); padding: 13px 16px; font-family: 'DM Sans', sans-serif; font-size: 15px; outline: none; width: 100%; transition: border-color 0.2s; appearance: none; cursor: pointer;">
+            <option value="" disabled selected>Select a program...</option>
+            <option value="Private 1-on-1">Private 1-on-1 Training</option>
+            <option value="Group Drop-in">Group Drop-In Session</option>
+            <option value="Monthly Group">Monthly Group Program</option>
+            <option value="Team Training">Team Training</option>
+            <option value="Camp / Clinic">Camp or Clinic</option>
+            <option value="Other">Other / General Inquiry</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="Message" placeholder="Tell Spencer about your goals, current level, and what you're looking to improve..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--gold" style="width: 100%; font-size: 18px; padding: 18px;">
+          Send Message
+        </button>
+
+        <p style="font-size: 12px; color: var(--muted); margin-top: 10px; text-align: center; line-height: 1.7;">
+          Your message goes directly to Spencer. He'll reply personally.
+        </p>
+
+      </form>
+    </div>
+
+    <!-- CONTACT INFO -->
+    <div class="contact-info fade-in d2">
+      <span class="section-label">Direct Contact</span>
+      <h3>Reach Spencer</h3>
+      <div class="gold-bar"></div>
+
+      <div class="contact-detail">
+        <div class="cd-icon">📱</div>
+        <div>
+          <p class="cd-label">Phone / WhatsApp</p>
+          <p class="cd-value"><a href="tel:+810803570-7096">080-3570-7096</a></p>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <div class="cd-icon">✉️</div>
+        <div>
+          <p class="cd-label">Email</p>
+          <p class="cd-value"><a href="mailto:spenjenn23@gmail.com">spenjenn23@gmail.com</a></p>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <div class="cd-icon">📸</div>
+        <div>
+          <p class="cd-label">Instagram</p>
+          <p class="cd-value"><a href="https://instagram.com/spenjenn_23" target="_blank" rel="noopener noreferrer">@spenjenn_23</a></p>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <div class="cd-icon">📍</div>
+        <div>
+          <p class="cd-label">Location</p>
+          <p class="cd-value">Tokyo, Japan</p>
+        </div>
+      </div>
+
+      <!-- Quick stats reminder -->
+      <div style="background: var(--charcoal); border: 1px solid var(--border); padding: 28px; margin-top: 36px;">
+        <p style="font-family: 'Bebas Neue', sans-serif; font-size: 13px; letter-spacing: 0.2em; color: var(--gold); margin-bottom: 18px;">Why Train With Spencer</p>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="color: var(--gold); font-size: 18px;">✓</span>
+            <p style="font-size: 14px; color: var(--muted-2);">9 seasons of professional playing experience</p>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="color: var(--gold); font-size: 18px;">✓</span>
+            <p style="font-size: 14px; color: var(--muted-2);">3x3.EXE Champion &amp; League MVP</p>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="color: var(--gold); font-size: 18px;">✓</span>
+            <p style="font-size: 14px; color: var(--muted-2);">NBA and FIBA World Tour experience</p>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="color: var(--gold); font-size: 18px;">✓</span>
+            <p style="font-size: 14px; color: var(--muted-2);">50+ students trained weekly in Tokyo</p>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="color: var(--gold); font-size: 18px;">✓</span>
+            <p style="font-size: 14px; color: var(--muted-2);">Wake Forest University Master's Degree</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CAMP SCHEDULE ── -->
+<section class="camp-schedule">
+  <div class="camp-schedule__inner">
+    <div class="camp-schedule__head">
+      <span class="section-label fade-in">On the Calendar</span>
+      <h2 class="section-title fade-in d1">Upcoming Camps &amp; Clinics</h2>
+      <div class="gold-bar fade-in d2"></div>
+      <p class="fade-in d2" style="color: var(--muted-2); font-size: 15px; line-height: 1.8; max-width: 600px;">
+        SpenJenn Grind runs regular camps and clinics across Tokyo for youth players of all levels.
+        Spots are limited — reach out early to secure your place.
+      </p>
+    </div>
+
+    <!-- April / May -->
+    <div class="camp-group fade-in">
+      <h3>April &amp; May — Nishimachi International School</h3>
+      <div class="camp-list">
+        <div class="camp-item">
+          <div class="camp-date">APR 27</div>
+          <div class="camp-info">
+            <h4>Sunday Clinic</h4>
+            <p>3:30–5:00PM (Ages 7–10) &nbsp;&nbsp;/&nbsp;&nbsp; 5:00–6:30PM (Ages 10–13)</p>
+          </div>
+          <div class="camp-tag">Ages 7–13</div>
+        </div>
+        <div class="camp-item">
+          <div class="camp-date">MAY 3</div>
+          <div class="camp-info">
+            <h4>Saturday Clinic</h4>
+            <p>3:30–5:00PM (Ages 7–10) &nbsp;&nbsp;/&nbsp;&nbsp; 5:00–6:30PM (Ages 10–13)</p>
+          </div>
+          <div class="camp-tag">Ages 7–13</div>
+        </div>
+        <div class="camp-item">
+          <div class="camp-date">MAY 10</div>
+          <div class="camp-info">
+            <h4>Saturday Clinic</h4>
+            <p>3:30–5:00PM (Ages 7–10) &nbsp;&nbsp;/&nbsp;&nbsp; 5:00–6:30PM (Ages 10–13)</p>
+          </div>
+          <div class="camp-tag">Ages 7–13</div>
+        </div>
+        <div class="camp-item">
+          <div class="camp-date">MAY 17</div>
+          <div class="camp-info">
+            <h4>Saturday Clinic</h4>
+            <p>3:30–5:00PM (Ages 7–10) &nbsp;&nbsp;/&nbsp;&nbsp; 5:00–6:30PM (Ages 10–13)</p>
+          </div>
+          <div class="camp-tag">Ages 7–13</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- June -->
+    <div class="camp-group fade-in">
+      <h3>June — Tokyo American Club Basketball Camp</h3>
+      <div class="camp-list">
+        <div class="camp-item">
+          <div class="camp-date">JUN 8–12</div>
+          <div class="camp-info">
+            <h4>Week 1 — Summer Basketball Camp</h4>
+            <p>Monday–Friday &nbsp;·&nbsp; 4:30–6:30PM daily</p>
+          </div>
+          <div class="camp-tag">Ages 8–14</div>
+        </div>
+        <div class="camp-item">
+          <div class="camp-date">JUN 15–19</div>
+          <div class="camp-info">
+            <h4>Week 2 — Summer Basketball Camp</h4>
+            <p>Monday–Friday &nbsp;·&nbsp; 4:30–6:30PM daily</p>
+          </div>
+          <div class="camp-tag">Ages 8–14</div>
+        </div>
+        <div class="camp-item">
+          <div class="camp-date">JUN 22–26</div>
+          <div class="camp-info">
+            <h4>Week 3 — Summer Basketball Camp</h4>
+            <p>Monday–Friday &nbsp;·&nbsp; 4:30–6:30PM daily</p>
+          </div>
+          <div class="camp-tag">Ages 8–14</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CAMP PHOTO ── -->
+<div style="max-width: var(--max-w); margin: 0 auto; padding: 0 48px 80px;">
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;" class="fade-in">
+    <div style="overflow:hidden; height:380px;">
+      <img src="spenjengroupccoaching.jpg" alt="SpenJenn Grind camp group" loading="lazy"
+           style="width:100%; height:100%; object-fit:cover; object-position:center top;">
+    </div>
+    <div style="overflow:hidden; height:380px;">
+      <img src="spenjencoaching.jpg" alt="Spencer Jennings with young players" loading="lazy"
+           style="width:100%; height:100%; object-fit:cover; object-position:center top;">
+    </div>
+  </div>
+</div>
+
+<!-- ── FINAL CTA BANNER ── -->
+<section style="background: var(--gold); padding: 80px 48px; text-align: center;">
+  <h2 style="font-size: clamp(36px, 6vw, 80px); color: var(--black); margin-bottom: 14px;">
+    Strength &amp; Honor
+  </h2>
+  <p style="color: rgba(0,0,0,0.6); font-size: 17px; max-width: 540px; margin: 0 auto 32px; line-height: 1.75;">
+    Every great player made one decision that changed their trajectory.
+    Make yours today.
+  </p>
+  <a href="mailto:spenjenn23@gmail.com" class="btn" style="background: var(--black); color: var(--white); font-size: 18px; letter-spacing: 0.14em;">
+    Email Spencer Directly
+  </a>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html"><img src="logo+tagline.jpg" alt="SpenJenn Grind"></a>
+      <p>Tokyo-based elite basketball training for players who are serious about their craft. Strength &amp; Honor.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <a href="index.html">Home</a>
+      <a href="story.html">Story</a>
+      <a href="training.html">Training</a>
+      <a href="clients.html">Clients</a>
+      <a href="book.html">Book Now</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>📱 &nbsp;080-3570-7096</p>
+      <a href="mailto:spenjenn23@gmail.com">spenjenn23@gmail.com</a>
+      <a href="https://instagram.com/spenjenn_23" target="_blank" rel="noopener noreferrer">@spenjenn_23</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 SpenJenn Grind. All rights reserved.</p>
+    <p>Strength &amp; Honor</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

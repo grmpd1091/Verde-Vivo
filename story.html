@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Story — Spencer Jennings | SpenJenn Grind</title>
+  <meta name="description" content="From Midland, Michigan to Wake Forest to the FIBA World Tour — the full journey of Spencer Jennings.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Story-page extras */
+    .coaching-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3px;
+      margin-top: 40px;
+    }
+    .coaching-item {
+      background: var(--charcoal);
+      padding: 32px 28px;
+      border-left: 3px solid var(--gold);
+      transition: background 0.2s;
+    }
+    .coaching-item:hover { background: var(--charcoal-2); }
+    .coaching-item h4 { font-size: 20px; color: var(--white); margin-bottom: 6px; }
+    .coaching-item p  { font-size: 13px; color: var(--muted-2); line-height: 1.75; }
+    .coaching-year    { font-family: 'Bebas Neue', sans-serif; font-size: 12px; letter-spacing: 0.2em; color: var(--gold); margin-bottom: 8px; }
+
+    .coaching-photos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+      margin-top: 40px;
+    }
+    .coaching-photos img {
+      width: 100%; height: 260px;
+      object-fit: cover; object-position: center top;
+    }
+
+    @media (max-width: 768px) {
+      .coaching-grid { grid-template-columns: 1fr; }
+      .coaching-photos { grid-template-columns: 1fr; }
+      .coaching-photos img { height: 220px; }
+    }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+
+<!-- ── PAGE INTRO ── -->
+<div class="page-intro" id="pageIntro">
+  <img src="logo+tagline.jpg" alt="SpenJenn Grind">
+</div>
+
+<!-- ── FLOATING CTA ── -->
+<div class="float-cta" id="floatCta">
+  <a href="book.html">Book a Session</a>
+</div>
+
+<!-- ── NAV ── -->
+<nav class="nav scrolled" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="logo+tagline.jpg" alt="SpenJenn Grind">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="story.html" class="active">Story</a></li>
+      <li><a href="training.html">Training</a></li>
+      <li><a href="clients.html">Clients</a></li>
+      <li><a href="book.html" class="nav-cta-link">Book Now</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ── MOBILE NAV ── -->
+<div class="nav-mobile" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="story.html">Story</a>
+  <a href="training.html">Training</a>
+  <a href="clients.html">Clients</a>
+  <a href="book.html">Book Now</a>
+</div>
+
+<!-- ── PAGE HERO ── -->
+<header class="page-hero" style="padding-top: var(--nav-h);">
+  <div class="page-hero__bg" style="background-image: url('3x3action7.jpg'); background-position: center 18%;"></div>
+  <div class="page-hero__gradient"></div>
+  <div class="page-hero__content container">
+    <span class="page-hero__label">SpenJenn Grind</span>
+    <h1 class="page-hero__title">THE<br>STORY</h1>
+  </div>
+</header>
+
+<!-- ── TIMELINE ── -->
+<section class="timeline section">
+  <div class="timeline__inner">
+
+    <!-- EARLY YEARS -->
+    <div class="tl-entry tl-entry--left fade-in">
+      <div class="tl-text">
+        <span class="tl-era">Origins</span>
+        <h3>Early Years</h3>
+        <div class="gold-bar"></div>
+        <p>
+          Spencer grew up in Midland, Michigan — but from ages 7 to 13 he was living in Hong Kong,
+          going to school abroad. The game was the constant through all of it. By the time he got
+          back to Michigan, the work ethic and love for basketball were already locked in.
+        </p>
+      </div>
+      <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-media">
+        <img src="SpenBaby.jpg" alt="Young Spencer Jennings" loading="lazy"
+             style="height:360px; object-position: center 20%;">
+      </div>
+    </div>
+
+    <!-- HIGH SCHOOL -->
+    <div class="tl-entry tl-entry--right fade-in">
+      <div class="tl-media">
+        <img src="HS.jpg" alt="Spencer Jennings — H.H. Dow High School" loading="lazy">
+      </div>
+      <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-text">
+        <span class="tl-era">High School</span>
+        <h3>H.H. Dow High School</h3>
+        <div class="gold-bar"></div>
+        <p>
+          Back in Michigan at H.H. Dow High School, Spencer established himself as one of the
+          state's elite players. A physical, relentless competitor, he earned <strong>2x First Team
+          All-Saginaw Valley Conference</strong> honors and <strong>All-State recognition</strong> as
+          a senior. The film shows it all — total commitment, nose for the ball, and a motor that
+          never quit.
+        </p>
+      </div>
+    </div>
+
+    <!-- COLLEGE -->
+    <div class="tl-entry tl-entry--left fade-in">
+      <div class="tl-text">
+        <span class="tl-era">College</span>
+        <h3>Wake Forest University</h3>
+        <div class="gold-bar"></div>
+        <p>
+          Spencer earned a Division I scholarship to <strong>Wake Forest University</strong>,
+          competing in one of the most prestigious programs in the ACC. Wearing #42 for the
+          Demon Deacons, he developed his game against the best collegiate competition in the
+          country. He went beyond basketball — earning his <strong>Master's Degree in 2014</strong>,
+          proof that the same discipline he brought to the court extended into every area of his life.
+        </p>
+      </div>
+      <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-media">
+        <img src="WF2.jpg" alt="Spencer Jennings in action at Wake Forest" loading="lazy"
+             style="width:100%; height:400px; object-fit:cover; object-position: center 30%;">
+      </div>
+    </div>
+
+    <!-- PRO CAREER -->
+    <div class="tl-entry tl-entry--right fade-in">
+      <div class="tl-media">
+        <div class="tl-media--multi">
+          <img src="3x3action4.jpg" alt="Spencer Jennings — 3x3.EXE fan moment" loading="lazy"
+               style="object-position: center top;">
+          <img src="3x3action9.jpg" alt="Spencer Jennings — Crayon.EXE team backs" loading="lazy"
+               style="object-position: center top;">
+        </div>
+      </div>
+      <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-text">
+        <span class="tl-era">Professional Career</span>
+        <h3>9 Seasons. Global Stage.</h3>
+        <div class="gold-bar"></div>
+        <p>
+          Nine seasons competing in Japan's 3x3.EXE league — from his rookie year with
+          Okinawa.72 EXE all the way through a championship run with Crayon.EXE.
+          <strong>Top 5 PPG</strong> multiple seasons,
+          <strong>5 Japan Tour Extreme Round</strong> titles. Consistent producer from year one.
+        </p>
+        <p style="margin-top:16px;">
+          His career took him beyond Japan to the <strong>FIBA 3x3 World Tour</strong> in
+          Qatar, China, and Korea — and in 2023 he trained with the
+          <strong>USA 3x3 Olympic Team</strong>.
+        </p>
+      </div>
+    </div>
+
+    <!-- WORLD TOUR -->
+    <div class="tl-entry tl-entry--left fade-in">
+      <div class="tl-text">
+        <span class="tl-era">International</span>
+        <h3>FIBA World Tour</h3>
+        <div class="gold-bar"></div>
+        <p>
+          The 3x3 World Tour is the highest level in the game — the best players from every
+          country, competing in packed arenas worldwide. Spencer competed at the World Tour
+          Masters in Doha, Qatar after winning the 3x3.EXE championship in 2020.
+          He held his own on that stage.
+        </p>
+      </div>
+      <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-media">
+        <img src="3x3international.jpg" alt="Spencer Jennings — FIBA 3x3 World Tour" loading="lazy"
+             style="height: 340px; object-position: center 25%;">
+      </div>
+    </div>
+
+  </div><!-- /.timeline__inner -->
+</section>
+
+<!-- ── ACCOLADES ── -->
+<section class="accolades">
+  <div class="accolades__inner">
+    <div class="accolades__head">
+      <span class="section-label fade-in">On the Record</span>
+      <h2 class="section-title fade-in d1">3x3 Accolades</h2>
+      <div class="gold-bar gold-bar--center fade-in d2"></div>
+    </div>
+
+    <div class="accolades-grid">
+      <div class="acc-item fade-in">
+        <h4>Highest PPG — Rookie Season</h4>
+        <p>Led all rookies in scoring during his debut 2017 season with Okinawa.72 EXE. A statement arrival.</p>
+      </div>
+      <div class="acc-item fade-in d1">
+        <h4>Top 5 PPG in the League — 2018</h4>
+        <p>Ranked among the top scorers in the entire 3x3.EXE league with Crayon.EXE. Elite company.</p>
+      </div>
+      <div class="acc-item fade-in d2">
+        <h4>3x3.EXE Champion — 2020</h4>
+        <p>Led Crayon.EXE to the 3x3.EXE Premier championship — earning a ticket to the FIBA World Tour Masters in Doha, Qatar.</p>
+      </div>
+      <div class="acc-item fade-in">
+        <h4>5× Japan Tour Extreme Round Champion</h4>
+        <p>Five times the best in Japan's most competitive single-round format. Consistency at the highest level.</p>
+      </div>
+      <div class="acc-item fade-in d1">
+        <h4>Top 5 Active Points Scorer</h4>
+        <p>Currently ranked among the top 5 all-time active scorers in the 3x3.EXE league — a testament to longevity and excellence.</p>
+      </div>
+      <div class="acc-item fade-in d2">
+        <h4>USA 3x3 Olympic Team Training — 2023</h4>
+        <p>Invited to train alongside the United States 3x3 Olympic program — the highest level of recognition for any player.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Win Photos -->
+  <div class="win-photos">
+    <div class="win-photo-wrap fade-in">
+      <img src="3x3win.jpg" alt="3x3.EXE Premier 2018 — 1st Place celebration" loading="lazy"
+           style="object-position: center top;">
+      <div class="win-photo-caption">
+        <p>3x3.EXE Premier 2018 — 1st Place</p>
+        <span>Crayon.EXE Championship Victory</span>
+      </div>
+    </div>
+    <div class="win-photo-wrap fade-in d2">
+      <img src="3x3win1.jpg" alt="Spencer Jennings — 3x3.EXE MVP Award" loading="lazy"
+           style="object-position: center top;">
+      <div class="win-photo-caption">
+        <p>3x3.EXE Premier 2018 — MVP</p>
+        <span>Most Valuable Player Award</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── COACHING CAREER ── -->
+<section class="section">
+  <div class="container">
+    <span class="section-label fade-in">Beyond the Court</span>
+    <h2 class="section-title fade-in d1">Coaching Career</h2>
+    <div class="gold-bar fade-in d2"></div>
+    <p class="fade-in d2" style="color: var(--muted-2); font-size: 15px; line-height: 1.85; max-width: 680px; margin-bottom: 0;">
+      From the Chris Paul Basketball Academy to the Tokyo American Club, Spencer has spent
+      over a decade pouring his professional experience into the next generation of players.
+      Today, SpenJenn Grind trains <strong style="color:var(--white)">50+ students weekly</strong> across
+      private, group, and team programs in Tokyo.
+    </p>
+
+    <div class="coaching-grid">
+      <div class="coaching-item fade-in">
+        <div class="coaching-year">2011 – 2014</div>
+        <h4>Wake Forest University Basketball Camp</h4>
+        <p>Trained and mentored youth players at WFU's annual summer program while still an active collegiate athlete.</p>
+      </div>
+      <div class="coaching-item fade-in d1">
+        <div class="coaching-year">2015 – 2017</div>
+        <h4>Chris Paul Basketball Academy</h4>
+        <p>Worked directly within the Chris Paul Academy system, developing national-level youth talent under a world-class coaching framework.</p>
+      </div>
+      <div class="coaching-item fade-in">
+        <div class="coaching-year">2016</div>
+        <h4>University of North Carolina Basketball Camp</h4>
+        <p>Selected as a camp trainer at UNC — one of the most prestigious basketball programs in college athletics.</p>
+      </div>
+      <div class="coaching-item fade-in d1">
+        <div class="coaching-year">2020 – Present</div>
+        <h4>Skills Trainer — Tokyo American Club</h4>
+        <p>Lead skills trainer at Tokyo American Club, developing players across all age groups and skill levels in the heart of Tokyo.</p>
+      </div>
+      <div class="coaching-item fade-in">
+        <div class="coaching-year">2020 – Present</div>
+        <h4>JV &amp; Varsity Coach — British School in Tokyo</h4>
+        <p>Head coach for both JV and Varsity programs at the British School, building a winning culture and developing student-athletes.</p>
+      </div>
+      <div class="coaching-item fade-in d1">
+        <div class="coaching-year">Founded</div>
+        <h4>SpenJenn Grind Basketball</h4>
+        <p>Founder of SpenJenn Grind — Tokyo's premier private basketball training program, now serving 50+ students weekly across all training formats.</p>
+      </div>
+    </div>
+
+    <!-- Coaching Photos -->
+    <div class="coaching-photos">
+      <img src="CPA.jpg" alt="Spencer Jennings at Chris Paul Basketball Academy" loading="lazy">
+      <img src="spenchencoaching1.jpg" alt="Spencer coaching youth players in Tokyo" loading="lazy">
+      <img src="BSTCOACH.jpg" alt="Spencer coaching the British School in Tokyo team" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section style="background: var(--gold); padding: 72px 48px; text-align: center;">
+  <h2 style="font-size: clamp(36px,6vw,76px); color: var(--black); margin-bottom: 24px;">
+    Train With a Champion
+  </h2>
+  <p style="color: rgba(0,0,0,0.65); font-size: 16px; max-width: 500px; margin: 0 auto 32px;">
+    Everything on this page is the foundation behind every session Spencer runs.
+    Be the next chapter.
+  </p>
+  <a href="book.html" class="btn" style="background: var(--black); color: var(--white); font-size: 18px;">
+    Book a Session
+  </a>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html"><img src="logo+tagline.jpg" alt="SpenJenn Grind"></a>
+      <p>Tokyo-based elite basketball training for players who are serious about their craft. Strength &amp; Honor.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <a href="index.html">Home</a>
+      <a href="story.html">Story</a>
+      <a href="training.html">Training</a>
+      <a href="clients.html">Clients</a>
+      <a href="book.html">Book Now</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>📱 &nbsp;080-3570-7096</p>
+      <a href="mailto:spenjenn23@gmail.com">spenjenn23@gmail.com</a>
+      <a href="https://instagram.com/spenjenn_23" target="_blank" rel="noopener noreferrer">@spenjenn_23</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 SpenJenn Grind. All rights reserved.</p>
+    <p>Strength &amp; Honor</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
